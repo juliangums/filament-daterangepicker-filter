@@ -33,11 +33,11 @@ php artisan vendor:publish --tag="filament-daterangepicker-filter-views"
 
 #### Light mode
 
-![DateRangePicker Widget](https://github.com/malzariey/filament-daterangepicker-filter/raw/main/art/light.png)
+![DateRangePicker Widget](https://github.com/malzariey/filament-daterangepicker-filter/raw/x4/art/light.png)
 
 #### Dark mode
 
-![DateRangePicker Widget](https://github.com/malzariey/filament-daterangepicker-filter/raw/main/art/dark.png)
+![DateRangePicker Widget](https://github.com/malzariey/filament-daterangepicker-filter/raw/x4/art/dark.png)
 
 
 ## Usage
