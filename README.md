@@ -39,7 +39,6 @@ php artisan vendor:publish --tag="filament-daterangepicker-filter-views"
 
 ![DateRangePicker Widget](https://github.com/malzariey/filament-daterangepicker-filter/raw/x4/art/dark.png)
 
-
 ## Usage
 
 ### As a Field
