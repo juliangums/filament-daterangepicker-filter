@@ -68,7 +68,7 @@ class DateRangeFilter extends BaseFilter
         $datesString = data_get($data, $this->column);
 
         if (!empty($datesString)) {
-            $dates = explode($this->separator, $datesString);
+            $dates = explode($this->rangeSeparator, $datesString);
         } else {
             $dates = [];
         }
@@ -153,9 +153,9 @@ class DateRangeFilter extends BaseFilter
         return $this;
     }
 
-    public function getFormSchema() : array
+    public function getSchemaComponents() : array
     {
-        $schema = $this->evaluate($this->formSchema);
+        $schema = $this->evaluate($this->schema);
 
         if ($schema !== null) {
             return $schema;
@@ -189,7 +189,7 @@ class DateRangeFilter extends BaseFilter
                 ->maxSpan($this->maxSpan)
                 ->useRangeLabels($this->useRangeLabels)
                 ->disableCustomRange($this->disableCustomRange)
-                ->separator($this->separator)
+                ->rangeSeparator($this->rangeSeparator)
                 ->icon($this->icon)
                 ->disableClear($this->disableClear)
                 ->showWeekNumbers($this->showWeekNumbers)

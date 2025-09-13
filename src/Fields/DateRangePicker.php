@@ -4,10 +4,9 @@ namespace Malzariey\FilamentDaterangepickerFilter\Fields;
 
 use Carbon\Carbon;
 use Closure;
-use Filament\Forms\Components\Actions\Action;
-use Filament\Forms\Components\TextInput;
+use Filament\Actions\Action;
 use Filament\Forms\Components\Concerns\{HasAffixes, HasExtraInputAttributes, HasPlaceholder};
-use Filament\Forms\Components\Contracts\HasAffixActions;
+use Filament\Schemas\Components\Contracts\HasAffixActions;
 use Filament\Forms\Components\Field;
 use Filament\Support\Concerns\HasExtraAlpineAttributes;
 use Illuminate\View\ComponentAttributeBag;
@@ -96,11 +95,11 @@ class DateRangePicker extends Field implements HasAffixActions
             $endDate = $this->getEndDate();
 
             if ($startDate != null && $endDate != null) {
-                $default = $startDate->format($this->getFormat()) . $this->separator . $endDate->format($this->getFormat());
+                $default = $startDate->format($this->getFormat()) . $this->rangeSeparator . $endDate->format($this->getFormat());
             } else if ($startDate != null && $endDate == null) {
-                $default = $startDate->format($this->getFormat()) . $this->separator . $startDate->format($this->getFormat());
+                $default = $startDate->format($this->getFormat()) . $this->rangeSeparator . $startDate->format($this->getFormat());
             } else if ($startDate == null && $endDate != null) {
-                $default = $endDate->format($this->getFormat()) . $this->separator . $endDate->format($this->getFormat());
+                $default = $endDate->format($this->getFormat()) . $this->rangeSeparator . $endDate->format($this->getFormat());
             }
         }
 
@@ -291,9 +290,9 @@ class DateRangePicker extends Field implements HasAffixActions
         return $this->evaluate($this->useRangeLabels);
     }
 
-    public function getSeparator(): string
+    public function getRangeSeparator(): string
     {
-        return $this->separator;
+        return $this->rangeSeparator;
     }
 
     public function getShowWeekNumbers(): bool
