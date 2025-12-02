@@ -162,8 +162,10 @@ export default function dateRangeComponent({
                     maxYear: maxYear,
                     isInvalidDate: (date) => {
                         if(momentDatesArray != null && momentDatesArray.length > 0 ) {
+                            // Compare using date strings to avoid timezone issues
+                            const dateStr = date.format('YYYY-MM-DD');
                             return momentDatesArray.some(disabledDate =>
-                                disabledDate.clone().tz(timezone).startOf('day').isSame(date.clone().startOf('day'), 'day')
+                                disabledDate.format('YYYY-MM-DD') === dateStr
                             );
                         }else{
                             return false;
